@@ -65,17 +65,4 @@ public class AudioFileWriter
 		s.addPart(p);
 		Write.midi(s, fileOutputStream);
 	}
-
-	public static void main(String[] args)
-	{
-		File midiFile = new File("melody.mid");
-		try
-		{
-			writeMelodyToFile(MelodyGenerator.getMelody(), new FileOutputStream(midiFile));
-		}
-		catch (FileNotFoundException e)
-		{
-			e.printStackTrace();
-		}
-	}
 }
