@@ -1,5 +1,6 @@
 package com.example.alphafishprop.sonicsightreader;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -20,4 +21,11 @@ public class SightreadingView extends AppCompatActivity {
     public void button_options_click(Button b) {
         //ToDo:  Nothing I guess, this will not be implemented
     }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        setContentView(R.layout.activity_sightreading_view);
+        return;
+    }
+
 }
