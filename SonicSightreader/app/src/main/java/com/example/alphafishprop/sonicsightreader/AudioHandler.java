@@ -69,17 +69,23 @@ public class AudioHandler {
         mPlayer=null;
     }
 
-    /*
     public void startPlaybackOfCorrectMelody(List<String> melody)
     {
         mCorrectMelodyFile = File.createTempFile("correctMelody", "mid");
         AudioFileWriter.writeMelodyToFile(melody, FileOutputStream(mCorrectMelodyFile));
-
+        mPlayer = new MediaPlayer();
+        try {
+            mPlayer.setDataSource("correctMelody.mid");
+            mPlayer.prepare();
+            mPlayer.start();
+        } catch(IOException e){
+            Log.e(LOG_TAG, "prepare() failed");
+        }
     }
 
     public void stopPlaybackOfCorrectMelody()
     {
-
+        mPlayer.release();
+        mPlayer=null;
     }
-    */
 }
