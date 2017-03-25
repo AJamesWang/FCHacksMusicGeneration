@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by alphafishprop on 3/25/2017.
@@ -30,7 +31,12 @@ public class AudioHandler {
 
     public AudioHandler()
     {
-        mRecordedAudioFileDesc = FileOutputStream(File.createTempFile("recordedAudio", "3gpp")).getFD()
+        try {
+            mRecordedAudioFileDesc = new FileOutputStream(File.createTempFile("recordedAudio", "3gpp")).getFD();
+        }
+        catch(IOException e){
+            Log.e(LOG_TAG, "something when wrong");
+        }
     }
 
     public void startRecording(){
@@ -71,16 +77,16 @@ public class AudioHandler {
 
     public void startPlaybackOfCorrectMelody(List<String> melody)
     {
-        mCorrectMelodyFile = File.createTempFile("correctMelody", "mid");
-        AudioFileWriter.writeMelodyToFile(melody, FileOutputStream(mCorrectMelodyFile));
-        mPlayer = new MediaPlayer();
-        try {
-            mPlayer.setDataSource("correctMelody.mid");
-            mPlayer.prepare();
-            mPlayer.start();
-        } catch(IOException e){
-            Log.e(LOG_TAG, "prepare() failed");
-        }
+//        try {
+//            mCorrectMelodyFile = File.createTempFile("correctMelody", "mid");
+//            AudioFileWriter.writeMelodyToFile(melody, new FileOutputStream(mCorrectMelodyFile));
+//            mPlayer = new MediaPlayer();
+//            mPlayer.setDataSource("correctMelody.mid");
+//            mPlayer.prepare();
+//            mPlayer.start();
+//        } catch(IOException e){
+//            Log.e(LOG_TAG, "prepare() failed");
+//        }
     }
 
     public void stopPlaybackOfCorrectMelody()

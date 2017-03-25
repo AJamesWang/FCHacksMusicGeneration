@@ -5,7 +5,8 @@
     android:id="@+id/sightreading"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.alphafishprop.sonicsightreader.SightreadingView">
+    tools:context="com.example.alphafishprop.sonicsightreader.SightreadingView"
+    android:background="@android:color/white">
 
     <LinearLayout
         android:layout_width="578dp"
