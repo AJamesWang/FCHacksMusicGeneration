@@ -7,13 +7,29 @@
     android:layout_height="match_parent"
     tools:context="com.example.alphafishprop.sonicsightreader.MainMenu">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+    <ImageView android:id="@+id/image_logo"
+        android:layout_height="196px"
+        android:layout_width="652px"
+        tools:layout_editor_absoluteY="58dp"
+        tools:layout_editor_absoluteX="29dp" />
+
+    <Button
+        android:id="@+id/button_start"
+        android:layout_width="338dp"
+        android:layout_height="54dp"
+        android:layout_marginRight="23dp"
+        android:onClick="button_start_click"
+        android:text="Start"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="357dp" />
+
+    <Button android:id="@+id/button_options"
+        android:layout_width="338dp"
+        android:layout_height="54dp"
+        android:text="Options"
+        android:onClick="startSightReading"
+        tools:layout_editor_absoluteY="430dp"
+        android:layout_marginRight="23dp"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
